@@ -55,7 +55,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
-  background: url("../img/background.avif") no-repeat center center fixed;
+  background: url("../img/Gemini_Generated_Image_nwet9lnwet9lnwet.png") no-repeat center center fixed;
   background-size: cover;
   /* makes image fit all screen sizes */
   color: #fff;
@@ -299,13 +299,20 @@ nav ul li a {
   margin-bottom: var(--mb-2);
 }
 
+/* Consolidated about__img rules (moved here) */
 .about__img {
   justify-self: center;
+  /* keep container-level styling here so all related rules live together */
 }
 
 .about__img img {
   width: 200px;
+  max-width: 100%;
   border-radius: 0.5rem;
+  display: block;
+  justify-self: center;
+  width: 300px;
+
 }
 
 /* ===== SKILLS =====*/
@@ -560,9 +567,7 @@ nav ul li a {
     top: 3rem;
   }
 
-  .nav {
-    height: calc(var(--header-height) + 1.5rem);
-  }
+  
 
   .nav__list {
     display: flex;
@@ -595,10 +600,7 @@ nav ul li a {
     padding-top: 2rem;
   }
 
-  .about__img img {
-    width: 300px;
-  }
-
+ 
   .skills__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;

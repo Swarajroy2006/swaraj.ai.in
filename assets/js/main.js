@@ -59,6 +59,7 @@ sr.reveal('.stat-card', { interval: 120});
 sr.reveal('.about__card', { interval: 140});
 sr.reveal('.skill-card', { interval: 100});
 sr.reveal('.project-card', { interval: 120});
+sr.reveal('.gallery__item', { interval: 80});
 sr.reveal('.contact__card', { interval: 120});
 
 

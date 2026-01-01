@@ -164,10 +164,19 @@ nav ul {
   border-radius: 8px;             /* Optional: smooth corners */
 }
 
+body.theme-light nav ul {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
 /* Nav links stay visible */
 nav ul li a {
   
   color: #fff; /* White text */
+}
+
+body.theme-light nav ul li a {
+  color: #0b1221;
 }
 
 
@@ -238,6 +247,12 @@ body.theme-light .theme-toggle {
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(255, 255, 255, 0.06);
   color: #e9eff5;
+}
+
+body.theme-light .theme-toggle {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.04);
+}
   cursor: pointer;
   transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }

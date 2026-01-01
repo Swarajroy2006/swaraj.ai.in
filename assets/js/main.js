@@ -58,39 +58,8 @@ sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200});
 
 
 
-// mail smtp js 
-/*
+// Intentionally left blank: no client-side SMTP to avoid exposing credentials.
 sendEmail(){
 
-  Email.send({
-    Host : "s1.maildns.net",
-    Username : "username",
-    Password : "password",
-    To : 'them@website.com',
-    From : "you@isp.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-  }).then(
-  message => alert(message)
-  );
-  
-}
-
-function sendEmail() {
-    Email.send({
-      Host: "smtp.swaraj.ai.in", 
-      Username: "site@swaraj.ai.in",
-      Password: "=i~XBzBA{n;+", 
-      To: "mail@swaraj.ai.in",
-      From: "site@swaraj.ai.in",
-      Subject: "Contact Form Submission",
-      Body: "Hi Swaraj, this is a test message sent using smtp.js!"
-    }).then(function(message) {
-      alert("Email sent successfully: " + message);
-    }).catch(function(error) {
-      alert("Failed to send email: " + error);
-    });
-  }
-*/
 
 

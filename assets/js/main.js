@@ -57,9 +57,45 @@ sr.reveal('.home__social-icon',{ interval: 200});
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
 
+// Theme toggle
+(() => {
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const storageKey = 'swaraj-theme';
+
+    const applyTheme = (theme) => {
+        const isLight = theme === 'light';
+        body.classList.toggle('theme-light', isLight);
+        if (toggle) {
+            const icon = toggle.querySelector('i');
+            if (icon) {
+                icon.className = isLight ? 'bx bx-sun' : 'bx bx-moon';
+            }
+            toggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+        }
+    };
+
+    const stored = localStorage.getItem(storageKey);
+    if (stored === 'light' || stored === 'dark') {
+        applyTheme(stored);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        applyTheme('light');
+    }
+
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            const isLight = body.classList.contains('theme-light');
+            const next = isLight ? 'dark' : 'light';
+            localStorage.setItem(storageKey, next);
+            applyTheme(next);
+        });
+    }
+})();
+
+
 
 // Intentionally left blank: no client-side SMTP to avoid exposing credentials.
-sendEmail(){
-
-
+// function sendEmail(){
+// 
+// }
 

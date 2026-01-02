@@ -37,8 +37,14 @@
   <meta name="revisit-after" content="7 days" />
   <meta name="theme-color" content="#6cf1d6" />
   <meta name="copyright" content="Swaraj Roy 2024" />
-  <meta name="geo.placename" content="Kolkata, India" />
+  <meta name="geo.placename" content="Kolkata, West Bengal, India" />
+  <meta name="geo.region" content="IN-WB" />
+  <meta name="geo.position" content="22.5726;88.3639" />
   <meta name="ICBM" content="22.5726,88.3639" />
+  
+  <!-- AEO (Answer Engine Optimization) Tags -->
+  <meta name="answer-engine" content="optimized" />
+  <meta name="voice-search" content="optimized" />
   
   <!-- Performance & Preload -->
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
@@ -46,12 +52,12 @@
   <link rel="preload" as="image" href="assets/img/hero.webp" />
   
   <!-- Favicon -->
-  <link rel="icon" href="assets/img/about.png" type="image/png">
+  <link rel="icon" href="assets/img/fevicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/about.png">
   <link rel="manifest" href="manifest.json">
   
   <!-- Title -->
-  <title>Swaraj Roy | Full-Stack Developer & Web Designer Portfolio</title>
+  <title>Swaraj Roy | Full-Stack Developer & Web Designer</title>
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/styles.css" />
@@ -130,6 +136,119 @@
       },
       "query-input": "required name=search_term_string"
     }
+  }
+  </script>
+
+  <!-- Local Business Schema (GEO-friendly) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Swaraj Roy - Web Developer",
+    "description": "Full-stack web developer and digital marketing expert based in Kolkata",
+    "url": "https://swaraj.ai.in",
+    "telephone": "+91-XXXXXXXXXX",
+    "email": "mail@swaraj.ai.in",
+    "image": "https://swaraj.ai.in/assets/img/hero.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kolkata",
+      "addressLocality": "Kolkata",
+      "addressRegion": "West Bengal",
+      "postalCode": "700000",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "22.5726",
+      "longitude": "88.3639"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Kolkata"
+    },
+    "priceRange": "$",
+    "sameAs": [
+      "https://github.com/Swarajroy2006",
+      "https://linkedin.com/in/swarajroy",
+      "https://twitter.com/swarajroy"
+    ]
+  }
+  </script>
+
+  <!-- FAQ Schema (AEO-friendly) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What services does Swaraj Roy offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Swaraj Roy provides full-stack web development, UI/UX design, Google Ads management, and Facebook Ads campaigns. He specializes in creating modern, responsive websites and digital marketing solutions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Swaraj Roy based?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Swaraj Roy is based in Kolkata, West Bengal, India. He serves clients both locally and globally with web development and digital marketing services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What technologies does Swaraj Roy work with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Swaraj Roy is skilled in JavaScript, React, Node.js, HTML5, CSS3, and modern web development frameworks. He also has expertise in digital marketing platforms like Google Ads and Facebook Ads."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I contact Swaraj Roy for a project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can contact Swaraj Roy through the contact form on this website or email him at mail@swaraj.ai.in. He responds to inquiries about web development projects, internships, and collaboration opportunities."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://swaraj.ai.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://swaraj.ai.in/#about"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Projects",
+        "item": "https://swaraj.ai.in/#projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Contact",
+        "item": "https://swaraj.ai.in/#contact"
+      }
+    ]
   }
   </script>
 </head>

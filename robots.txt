@@ -1,29 +1,44 @@
 # Robots.txt for Swaraj Roy Portfolio
 # Allow all bots to crawl the website
+# GEO & AEO Optimized
 
 User-agent: *
 Allow: /
 Allow: /assets/
 Allow: /index.html
+Allow: /sitemap.xml
+Allow: /manifest.json
 
-# Disallow private or sensitive areas (if any)
+# Disallow private or sensitive areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
+Disallow: /*.json$
+Disallow: /search/
 
-# Specific rules for Google
+# Google-specific rules
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-# Specific rules for Bing
+# Bing-specific rules
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# Sitemap location
+# Allow voice search bots
+User-agent: Alexa
+Allow: /
+
+User-agent: Google-Assistant
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/img/
+
+# Sitemap location (GEO & AEO)
 Sitemap: https://swaraj.ai.in/sitemap.xml
 
-# Tell crawlers when to check back
+# Standard crawl delay
 User-agent: *
 Crawl-delay: 1

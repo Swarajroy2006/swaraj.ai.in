@@ -5,22 +5,22 @@
 
 export const aboutData = [
   {
-    title: 'Builder + Marketer',
-    description: 'I blend development with marketing: coding responsive products, designing UI/UX, and running real-world ad campaigns. I love turning ideas into interfaces that are fast, clear, and effective.',
+    title: 'Developer + Problem Solver',
+    description: 'I’m a BCA student focused on building responsive web applications, clean UI/UX systems, and AI-driven solutions. I enjoy solving problems using data structures and algorithms, and turning ideas into scalable, real-world products.',
     highlights: [
-      'Currently BCA (Techno India, Salt Lake).',
-      'Hands-on with Google Ads and Facebook Ads.',
-      'Comfortable across HTML, CSS, JS, WordPress.',
-      'Early explorations in Flutter and mobile UI.'
+      'Currently pursuing BCA (Techno India, Salt Lake).',
+      'Hands-on with Python, C, HTML, CSS, JavaScript, and tools like OpenCV, MediaPipe, Git, and WordPress.',
+      'Experience working with ad-tech platforms (Google & Meta) as a supporting skill, alongside core development.',
+      
     ]
   },
   {
     title: 'What drives me',
-    description: 'Curiosity and delivery. I enjoy shipping small, polished pieces regularly—landing pages, dashboards, campaign creatives—and learning from real users.',
+    description: 'Curiosity, problem-solving, and continuous learning. I enjoy building small, functional systems, iterating on code, and improving performance and usability through feedback.',
     highlights: [
-      'Design-first mindset with attention to detail.',
-      'Analytics-aware: iterate with data.',
-      'Collaborative, open to feedback, clear communication.'
+      'Strong interest in DSA, system logic, and applied AI.',
+      'Design-first mindset with attention to UX and code quality.',
+      'Comfortable collaborating in teams, open to feedback, and clear in communication.'
     ]
   }
 ];

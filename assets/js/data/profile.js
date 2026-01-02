@@ -9,7 +9,7 @@ export const profile = {
   name: 'Swaraj Roy',
   title: 'BCA Student • Developer • Coding Enthusiast',
   headline: 'I craft web experiences & scalable solutions.',
-  bio: 'Based in Kolkata, I build responsive sites, UI/UX, and manage Google/Facebook ads for brands while pursuing my BCA at Techno India (Salt Lake).',
+  bio: 'Based in Kolkata, I build responsive web applications, UI/UX, and AI-driven sustainable solutions while pursuing a BCA <br> at Techno India (Salt Lake).',
   
   // Contact & Location
   location: 'Kolkata, India',
@@ -41,19 +41,21 @@ export const profile = {
 
 export const stats = [
   {
-    number: '15+',
-    label: 'Web projects and experiments shipped.'
-  },
-  {
-    number: '5',
-    label: 'Live ad campaigns across Google and Meta.'
-  },
-  {
-    number: '3',
-    label: 'Tech stacks: HTML/CSS/JS, WordPress, Flutter basics.'
-  },
-  {
     number: 'BCA',
-    label: 'Techno India (Salt Lake) — first year.'
-  }
+    label: 'Techno India (Salt Lake) - Current Student.'
+  },
+   {
+    number: '10+',
+    label: 'Technical projects & systems built'
+  },
+  {
+    number: 'Tech Stack',
+    label: 'Python, C, HTML/CSS/JS, OpenCV, MediaPipe, Git'
+  },
+  {
+    number: 'Ad-Tech',
+    label: 'Experience with Google & Meta ads platforms'
+  },
+ 
+  
 ];

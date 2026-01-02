@@ -1,0 +1,29 @@
+# Robots.txt for Swaraj Roy Portfolio
+# Allow all bots to crawl the website
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /index.html
+
+# Disallow private or sensitive areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://swaraj.ai.in/sitemap.xml
+
+# Tell crawlers when to check back
+User-agent: *
+Crawl-delay: 1

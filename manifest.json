@@ -1,0 +1,50 @@
+{
+  "name": "Swaraj Roy Portfolio",
+  "short_name": "Swaraj Roy",
+  "description": "Professional portfolio of Swaraj Roy - Full-stack developer and web designer in Kolkata",
+  "start_url": "https://swaraj.ai.in/",
+  "display": "standalone",
+  "background_color": "#050712",
+  "theme_color": "#6cf1d6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "assets/img/about.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/img/about.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/img/hero.webp",
+      "sizes": "540x720",
+      "type": "image/webp",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View all projects",
+      "url": "https://swaraj.ai.in/#projects",
+      "icons": [{"src": "assets/img/about.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "https://swaraj.ai.in/#contact",
+      "icons": [{"src": "assets/img/about.png", "sizes": "192x192"}]
+    }
+  ]
+}

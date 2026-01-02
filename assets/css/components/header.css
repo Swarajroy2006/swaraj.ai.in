@@ -9,6 +9,19 @@
   backdrop-filter: blur(14px);
   background: rgba(5, 7, 18, 0.75);
   border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .nav {
@@ -26,6 +39,12 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  transition: var(--transition);
+}
+
+.nav__brand:hover {
+  transform: translateY(-2px);
+  color: var(--primary, #6cf1d6);
 }
 
 .nav__pill {
@@ -45,12 +64,26 @@
   border-radius: 12px;
   color: var(--muted);
   transition: var(--transition);
+  position: relative;
 }
 
 .nav__link:hover, 
 .nav__link.active-link { 
   color: var(--text); 
-  background: rgba(255, 255, 255, 0.06); 
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.nav__link.active-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: var(--primary, #6cf1d6);
+  border-radius: 50%;
 }
 
 .nav__actions { display: flex; align-items: center; gap: 0.5rem; }

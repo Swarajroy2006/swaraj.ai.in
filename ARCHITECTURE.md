@@ -163,32 +163,4 @@ Component Stylesheets:
 ✅ Want to change colors?        → Edit base.css
 ✅ Want to change layouts?       → Edit component CSS
 ✅ Want to modify text anywhere? → Edit data files
-✅ Never touch HTML again!       → Automatic updates! 🎉
-```
-
-## Key Concepts
-
-### 🎯 Data-Driven Architecture
-- **Content** lives in JavaScript data files
-- **Logic** handles rendering from data
-- **HTML** is just semantic containers
-- **CSS** is organized by component
-
-### 🔄 Automatic Updates
-1. Edit data → Save → Refresh → Done!
-2. No manual HTML updates needed
-3. No risk of HTML structure breaking
-4. Easy to version control (just data changed)
-
-### 📦 Modular Organization
-- Each data file = One section
-- Each CSS file = One component
-- Each function = One render operation
-- Easy to find, easy to change
-
-### 🚀 Scalability
-- Add new sections by creating data + render function
-- Add new skills/projects just by adding to array
-- Reusable render patterns
-- No code duplication
 

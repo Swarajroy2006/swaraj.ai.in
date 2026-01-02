@@ -13,7 +13,7 @@ export const projectsData = [
     image: 'assets/img/soul-sync.jpg',
     tags: ['React.js', 'MongoDB', 'Express.js','Gemini AI'],
     liveUrl: 'https://ai-ml-frontend.onrender.com/',
-    githubUrl: 'https://github.com/Swarajroy2006/SoulSync-CosmoHack1',
+    githubUrl: 'https://github.com/Swarajroy2006/SoulSyncCosmoHack1',
     featured: true
   },
   

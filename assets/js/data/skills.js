@@ -5,34 +5,40 @@
  */
 
 export const skillsData = [
-  {
-    category: 'Frontend',
-    description: '',
-    skills: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design']
-  },
-  {
-    category: 'UI/UX',
-    description: '',
-    skills: ['Wireframing', 'Prototyping', 'Design Systems']
-  },
-  {
-    category: 'Platforms',
-    description: '',
-    skills: ['WordPress', 'Elementor', 'WooCommerce']
-  },
-  {
-    category: 'Marketing',
-    description: '',
-    skills: ['Google Ads', 'Meta Ads', 'Campaign Strategy']
-  },
-  {
-    category: 'Programming',
-    description: '',
-    skills: ['C Programming', 'DS basics']
-  },
-  {
-    category: 'Learning',
-    description: '',
-    skills: ['Flutter UI', 'APIs', 'Performance']
-  }
+ {
+  category: 'Frontend',
+  description: 'Building responsive and accessible user interfaces.',
+  skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'Responsive Design']
+},
+{
+  category: 'Programming & CS Fundamentals',
+  description: 'Core programming and problem-solving foundations.',
+  skills: ['Python', 'C Programming', 'Data Structures & Algorithms (DSA)', 'Problem Solving']
+},
+{
+  category: 'AI & Automation',
+  description: 'Applied AI and computer vision for real-world automation.',
+  skills: ['OpenCV', 'MediaPipe', 'NumPy', 'Gesture Recognition']
+},
+{
+  category: 'UI/UX',
+  description: 'Designing clean, user-centric interfaces and systems.',
+  skills: ['Wireframing', 'Prototyping', 'Design Systems', 'Figma']
+},
+{
+  category: 'Tools & Platforms',
+  description: 'Development, deployment, and collaboration tools.',
+  skills: ['Git', 'GitHub', 'WordPress', 'cPanel', 'Elementor']
+},
+{
+  category: 'Ad-Tech (Supporting Skill)',
+  description: 'Experience with digital advertising platforms and analytics.',
+  skills: ['Google Ads', 'Meta Ads', 'Campaign Analytics']
+},
+{
+  category: 'Currently Exploring',
+  description: 'Learning and experimenting with new technologies.',
+  skills: ['Flutter (UI basics)', 'REST APIs', 'Performance Optimization']
+}
+
 ];

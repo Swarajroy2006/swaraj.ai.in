@@ -8,7 +8,7 @@ export const profile = {
   // Personal Information
   name: 'Swaraj Roy',
   title: 'BCA Student • Developer • Coding Enthusiast',
-  headline: 'I craft web experiences and scalable solutions.',
+  headline: 'I craft web experiences & scalable solutions.',
   bio: 'Based in Kolkata, I build responsive sites, UI/UX, and manage Google/Facebook ads for brands while pursuing my BCA at Techno India (Salt Lake).',
   
   // Contact & Location

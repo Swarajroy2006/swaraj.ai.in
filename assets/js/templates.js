@@ -151,7 +151,8 @@ export function renderProjects() {
       <div class="project-card__cta">
         ${project.comingSoon ? 
           `<span class="project-card__link">Coming soon</span>` :
-          `<a class="project-card__link" href="${project.liveUrl}" target="_blank" rel="noopener noreferrer">View live <i class='bx bx-right-arrow-alt'></i></a>`
+          `<a class="project-card__link" href="${project.liveUrl}" target="_blank" rel="noopener noreferrer">View live <i class='bx bx-right-arrow-alt'></i></a>
+          ${project.githubUrl ? `<a class="project-card__link" href="${project.githubUrl}" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i> GitHub</a>` : ''}`
         }
       </div>
     </article>

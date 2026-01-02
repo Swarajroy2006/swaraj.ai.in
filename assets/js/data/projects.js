@@ -6,15 +6,17 @@
  */
 
 export const projectsData = [
-  {
+   {
     id: 1,
-    title: 'College Showcase',
-    description: 'A clean, responsive site for college information with smooth navigation and clear CTAs.',
-    image: 'assets/img/work1.jpg',
-    tags: ['HTML', 'CSS', 'JS'],
-    liveUrl: 'https://clg.swaraj.ai.in',
+    title: 'Soul Sync',
+    description: 'Soul Sync is an AI-powered emotional wellness platform.',
+    image: 'assets/img/soul-sync.jpg',
+    tags: ['React.js', 'MongoDB', 'Express.js','Gemini AI'],
+    liveUrl: 'https://ai-ml-frontend.onrender.com/',
+    githubUrl: 'https://github.com/Swarajroy2006/SoulSync-CosmoHack1',
     featured: true
   },
+  
   {
     id: 2,
     title: 'To-do Lab',
@@ -22,6 +24,7 @@ export const projectsData = [
     image: 'assets/img/work2.png',
     tags: ['Vanilla JS', 'LocalStorage'],
     liveUrl: 'https://lab.swaraj.ai.in/to-do-list/',
+    githubUrl: 'https://github.com/Swarajroy2006/to-do-list',
     featured: true
   },
   {
@@ -31,15 +34,27 @@ export const projectsData = [
     image: 'assets/img/work3.png',
     tags: ['API', 'Async JS'],
     liveUrl: 'https://lab.swaraj.ai.in/Weather-api/',
+    githubUrl: 'https://github.com/Swarajroy2006/Weather-api',
     featured: true
   },
   {
     id: 4,
+    title: 'assignment submission',
+    description: 'A clean, responsive site for college information with smooth navigation and clear CTAs.',
+    image: 'assets/img/work1.jpg',
+    tags: ['HTML', 'CSS', 'JS'],
+    liveUrl: 'https://clg.swaraj.ai.in',
+    githubUrl: '',
+    featured: false
+  },
+  {
+    id: 5,
     title: 'Next Up',
     description: 'New experiments in UI/UX and campaigns are on the way.',
     image: 'assets/img/soon.jpg',
     tags: ['Design', 'Build'],
     liveUrl: null,
+    githubUrl: null,
     featured: false,
     comingSoon: true
   }

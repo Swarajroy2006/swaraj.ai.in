@@ -8,9 +8,12 @@ import { renderAll } from './templates.js';
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', () => {
   renderAll();
-  setupNavigationHandlers();
-  setupScrollAnimations();
   setupThemeToggle();
+  setupNavigationHandlers();
+  // Animations must be setup AFTER content is rendered
+  setTimeout(() => {
+    setupScrollAnimations();
+  }, 50);
 });
 
 /*===== MENU SHOW =====*/ 

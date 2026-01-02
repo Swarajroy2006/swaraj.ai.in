@@ -133,5 +133,15 @@
   <!-- SCROLL REVEAL -->
   <script src="https://unpkg.com/scrollreveal"></script>
   <script type="module" src="assets/js/main.js"></script>
+  <script>
+function toggleSection(section) {
+  const sectionDiv = document.getElementById(section);
+  if (sectionDiv.style.display === "none") {
+    sectionDiv.style.display = "block";
+  } else {
+    sectionDiv.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>

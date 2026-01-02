@@ -1,36 +1,30 @@
-/**
- * Experience & Education Timeline Data
- * Chronological order of professional experience, education, and milestones
- * Add new experiences or education entries here
- */
-
 export const experienceData = [
   {
     period: '2024 - Present',
-    title: 'BCA Student',
+    title: 'Bachelor of Computer Applications (BCA)',
     organization: 'Techno India, Salt Lake, Kolkata',
-    description: 'First-year Bachelor of Computer Applications student pursuing comprehensive computer science education with focus on programming, web development, and software engineering.',
+    description: 'Pursuing a Bachelor of Computer Applications with a strong focus on programming fundamentals, data structures, web development, digital electronics, and computer architecture. Actively developing skills through hands-on projects in Python, AI, and automation.',
     type: 'education'
   },
   {
     period: '2024 - Present',
-    title: 'Digital Marketing Specialist',
-    organization: 'Freelance',
-    description: 'Managing Google Ads and Facebook Ads campaigns for multiple companies. Creating and optimizing ad campaigns, analyzing performance metrics, and delivering measurable ROI for clients.',
-    type: 'experience'
-  },
-  {
-    period: '2023 - Present',
     title: 'Web Developer',
-    organization: 'Freelance Projects',
-    description: 'Building responsive websites and web applications using HTML, CSS, JavaScript, and WordPress. Specialized in creating modern, user-friendly interfaces with clean code and optimal performance.',
+    organization: 'Freelance & Academic Projects',
+    description: 'Building responsive web applications and user interfaces using HTML, CSS, JavaScript, and WordPress. Developed multiple projects including a gesture-controlled automation system, To-Do List app, and weather application with real-time APIs.',
     type: 'experience'
   },
   {
     period: '2022 - 2024',
-    title: 'Higher Secondary Education',
-    organization: 'Kalinagar High School (H.S), Uluberia',
-    description: 'Completed higher secondary education with focus on Physics, Chemistry, Mathematics, and Electronics. Developed strong analytical and problem-solving foundation.',
+    title: 'Higher Secondary Education (Science)',
+    organization: 'Kalinagar High School (H.S), Uluberia, Howrah',
+    description: 'Completed higher secondary education under WBCHSE with a focus on Physics, Chemistry, Mathematics, and Electronics. Also completed NSQF Level 4 vocational training as Field Technician – Computing & Peripherals (600 hours).',
+    type: 'education'
+  },
+  {
+    period: '2022',
+    title: 'Secondary School Examination',
+    organization: 'Kalinagar High School (H.S), Uluberia, Howrah',
+    description: 'Completed WBBSE secondary examination with Grade A. Earned NSQF Level 3 vocational certification as Field Technician – Other Home Appliances (400 hours).',
     type: 'education'
   }
 ];

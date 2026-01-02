@@ -1,0 +1,77 @@
+/* Light Theme */
+body.theme-light {
+  background: radial-gradient(circle at 15% 20%, rgba(108, 241, 214, 0.08), transparent 30%),
+              radial-gradient(circle at 80% 0%, rgba(122, 162, 255, 0.14), transparent 28%),
+              linear-gradient(135deg, #f6f8fc 0%, #e8edf7 55%, #dde6f6 100%);
+  color: #0c1530;
+}
+
+body.theme-light .header { 
+  background: rgba(255, 255, 255, 0.9); 
+}
+
+body.theme-light .nav__link { 
+  color: #3f4a64; 
+}
+
+body.theme-light .nav__link:hover, 
+body.theme-light .nav__link.active-link { 
+  color: #0c1530; 
+  background: rgba(12, 21, 48, 0.06); 
+}
+
+body.theme-light .theme-toggle, 
+body.theme-light .nav__toggle { 
+  border-color: rgba(0, 0, 0, 0.08); 
+  background: rgba(0, 0, 0, 0.04); 
+  color: #0c1530; 
+}
+
+body.theme-light .btn--ghost { 
+  background: rgba(12, 21, 48, 0.05); 
+  border-color: rgba(12, 21, 48, 0.12); 
+  color: #0c1530; 
+}
+
+body.theme-light .stat-card, 
+body.theme-light .about__card, 
+body.theme-light .skill-card, 
+body.theme-light .project-card, 
+body.theme-light .contact__card, 
+body.theme-light .timeline__content { 
+  background: rgba(255, 255, 255, 0.85); 
+  border-color: rgba(0, 0, 0, 0.08); 
+  box-shadow: 0 14px 50px rgba(0, 0, 0, 0.12); 
+}
+
+body.theme-light .project-card__tags .tag { 
+  color: #0c1530; 
+  border-color: rgba(12, 21, 48, 0.12); 
+  background: rgba(108, 241, 214, 0.22); 
+}
+
+body.theme-light .footer { 
+  background: rgba(12, 21, 48, 0.03); 
+  color: #3f4a64; 
+}
+
+body.theme-light .footer__icon { 
+  color: #0c1530; 
+  border-color: rgba(0, 0, 0, 0.08); 
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  section { 
+    padding: 4rem 0; 
+  }
+  
+  .hero__actions { 
+    width: 100%; 
+  }
+  
+  .btn { 
+    width: 100%; 
+    justify-content: center; 
+  }
+}

@@ -1,0 +1,101 @@
+/* Header Navigation Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  backdrop-filter: blur(14px);
+  background: rgba(5, 7, 18, 0.75);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.nav__brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.nav__pill {
+  padding: 0.25rem 0.85rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.nav__menu { display: none; }
+
+.nav__list { list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; }
+
+.nav__link {
+  padding: 0.65rem 0.9rem;
+  border-radius: 12px;
+  color: var(--muted);
+  transition: var(--transition);
+}
+
+.nav__link:hover, 
+.nav__link.active-link { 
+  color: var(--text); 
+  background: rgba(255, 255, 255, 0.06); 
+}
+
+.nav__actions { display: flex; align-items: center; gap: 0.5rem; }
+
+.theme-toggle, 
+.nav__toggle {
+  width: 46px; 
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover, 
+.nav__toggle:hover { 
+  transform: translateY(-2px); 
+}
+
+.nav__toggle { 
+  font-size: 1.6rem; 
+  display: inline-flex; 
+}
+
+@media (max-width: 900px) {
+  .nav__menu {
+    position: fixed;
+    inset: calc(var(--header-height) + 10px) 1rem auto 1rem;
+    background: rgba(7, 9, 24, 0.95);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    display: none;
+    box-shadow: var(--shadow);
+  }
+  .nav__menu.show { display: block; }
+  .nav__list { flex-direction: column; padding: 1rem; }
+  .nav__link { width: 100%; }
+}
+
+@media (min-width: 901px) {
+  .nav__menu { display: block !important; }
+  .nav__toggle { display: none; }
+}

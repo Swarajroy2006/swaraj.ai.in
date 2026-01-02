@@ -1,0 +1,68 @@
+/* Timeline (Experience & Education) */
+.timeline { 
+  position: relative; 
+  padding-left: 2rem; 
+}
+
+.timeline::before { 
+  content: ""; 
+  position: absolute; 
+  left: 0; 
+  top: 0; 
+  bottom: 0; 
+  width: 2px; 
+  background: linear-gradient(180deg, var(--accent) 0%, var(--accent-2) 50%, var(--accent-3) 100%); 
+}
+
+.timeline__item { 
+  position: relative; 
+  margin-bottom: 2.5rem; 
+}
+
+.timeline__marker { 
+  position: absolute; 
+  left: -2.45rem; 
+  top: 0.3rem; 
+  width: 14px; 
+  height: 14px; 
+  border-radius: 50%; 
+  background: var(--accent); 
+  border: 3px solid var(--bg); 
+  box-shadow: 0 0 0 3px var(--card); 
+}
+
+.timeline__content { 
+  padding: 1.5rem; 
+  border-radius: var(--radius-sm); 
+  border: 1px solid var(--border); 
+  background: var(--card); 
+  box-shadow: var(--shadow); 
+}
+
+.timeline__date { 
+  display: inline-block; 
+  padding: 0.35rem 0.75rem; 
+  border-radius: 8px; 
+  background: rgba(108, 241, 214, 0.12); 
+  color: var(--accent); 
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  margin-bottom: 0.5rem; 
+}
+
+.timeline__content h3 { 
+  font-size: 1.25rem; 
+  margin-bottom: 0.35rem; 
+}
+
+.timeline__content h4 { 
+  color: var(--muted); 
+  font-size: 1rem; 
+  font-weight: 500; 
+  margin-bottom: 0.75rem; 
+}
+
+.timeline__content p { 
+  color: var(--muted); 
+  line-height: 1.6; 
+}

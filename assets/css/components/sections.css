@@ -1,0 +1,23 @@
+/* Section Headings */
+.section__head { 
+  margin-bottom: 1.5rem; 
+  display: flex; 
+  align-items: baseline; 
+  gap: 0.6rem; 
+}
+
+.section__eyebrow { 
+  color: var(--accent); 
+  font-weight: 600; 
+  letter-spacing: 0.7px; 
+  font-size: 0.85rem; 
+}
+
+.section__title { 
+  font-size: 2rem; 
+}
+
+.section__text { 
+  color: var(--muted); 
+  max-width: 720px; 
+}

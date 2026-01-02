@@ -1,0 +1,39 @@
+/* Contact Section */
+.contact__grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 1.5rem; 
+  align-items: start; 
+}
+
+.contact__card { 
+  padding: 1.5rem; 
+  border-radius: var(--radius); 
+  border: 1px solid var(--border); 
+  background: var(--card); 
+  box-shadow: var(--shadow); 
+}
+
+.contact__form { 
+  display: grid; 
+  gap: 0.9rem; 
+}
+
+.input { 
+  width: 100%; 
+  padding: 0.9rem 1rem; 
+  border-radius: 12px; 
+  border: 1px solid var(--border); 
+  background: rgba(255, 255, 255, 0.05); 
+  color: var(--text); 
+  font-size: 1rem; 
+}
+
+.input::placeholder { 
+  color: rgba(234, 239, 246, 0.6); 
+}
+
+textarea.input { 
+  min-height: 140px; 
+  resize: vertical; 
+}

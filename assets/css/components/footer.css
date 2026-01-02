@@ -1,0 +1,33 @@
+/* Footer Section */
+.footer { 
+  padding: 2.5rem 0; 
+  color: var(--muted); 
+  text-align: center; 
+  border-top: 1px solid var(--border); 
+  background: rgba(255, 255, 255, 0.03); 
+}
+
+.footer__social { 
+  margin: 1rem 0; 
+  display: flex; 
+  justify-content: center; 
+  gap: 0.75rem; 
+}
+
+.footer__icon { 
+  width: 42px; 
+  height: 42px; 
+  border-radius: 12px; 
+  display: grid; 
+  place-items: center; 
+  background: rgba(255, 255, 255, 0.06); 
+  border: 1px solid var(--border); 
+  color: var(--text); 
+  transition: var(--transition); 
+}
+
+.footer__icon:hover { 
+  background: var(--accent); 
+  color: #0b1221; 
+  border-color: transparent; 
+}

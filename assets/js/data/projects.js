@@ -10,10 +10,10 @@ export const projectsData = [
     id: 1,
     title: 'Soul Sync',
     description: 'Soul Sync is an AI-powered emotional wellness platform.',
-    image: 'assets/img/soul-sync.jpg',
+    image: 'assets/img/soulsync.jpg',
     tags: ['React.js', 'MongoDB', 'Express.js','Gemini AI'],
     liveUrl: 'https://ai-ml-frontend.onrender.com/',
-    githubUrl: 'https://github.com/Swarajroy2006/SoulSyncCosmoHack1',
+    githubUrl: 'https://github.com/Swarajroy2006/Soul-SyncCosmoHack1',
     featured: true
   },
   

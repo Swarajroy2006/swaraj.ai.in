@@ -13,7 +13,6 @@ Allow: /manifest.json
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
-Disallow: /*.json$
 Disallow: /search/
 
 # Google-specific rules

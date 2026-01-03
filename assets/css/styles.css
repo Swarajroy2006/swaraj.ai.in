@@ -533,6 +533,139 @@ body.theme-light .input::placeholder {
   animation: sr-reveal-right 1s ease forwards;
 }
 
+/*===== MAINTENANCE POPUP =====*/
+.maintenance-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 7, 18, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  overflow: auto;
+}
+
+.maintenance-popup.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.maintenance-popup__content {
+  background: var(--card-strong);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow);
+  animation: popup-bounce 0.5s ease;
+  margin: auto;
+}
+
+@keyframes popup-bounce {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.maintenance-popup__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.maintenance-popup__close:hover {
+  background: var(--card);
+  color: var(--text);
+  transform: rotate(90deg);
+}
+
+.maintenance-popup__icon {
+  font-size: 4rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  animation: rotate-wrench 3s ease-in-out infinite;
+}
+
+@keyframes rotate-wrench {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+}
+
+.maintenance-popup__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.maintenance-popup__message {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.maintenance-popup__sub {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .maintenance-popup__content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .maintenance-popup__icon {
+    font-size: 3rem;
+  }
+  
+  .maintenance-popup__title {
+    font-size: 1.5rem;
+  }
+}
+
 /*===== RESPONSIVE =====*/
 @media (max-width: 600px) {
   section { padding: 4rem 0; }

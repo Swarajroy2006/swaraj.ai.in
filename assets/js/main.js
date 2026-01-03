@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAll();
   setupThemeToggle();
   setupNavigationHandlers();
+  setupMaintenancePopup();
   // Animations must be setup AFTER content is rendered
   setTimeout(() => {
     setupScrollAnimations();
@@ -126,4 +127,40 @@ function setupThemeToggle() {
     });
   }
 }
+
+/*===== MAINTENANCE POPUP =====*/
+function setupMaintenancePopup() {
+  const popup = document.getElementById('maintenancePopup');
+  const closeBtn = document.getElementById('closeMaintenancePopup');
+  const storageKey = 'maintenance-popup-closed';
+  
+  // Always show popup on first load (comment out next 2 lines to show every time)
+  const wasClosed = localStorage.getItem(storageKey);
+  
+  if (popup) {
+    // Show popup immediately if not closed before
+    if (!wasClosed) {
+      setTimeout(() => {
+        popup.classList.add('show');
+      }, 500);
+    }
+    
+    // Close popup when clicking the close button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        popup.classList.remove('show');
+        localStorage.setItem(storageKey, 'true');
+      });
+    }
+    
+    // Close popup when clicking outside the content
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) {
+        popup.classList.remove('show');
+        localStorage.setItem(storageKey, 'true');
+      }
+    });
+  }
+}
+
 

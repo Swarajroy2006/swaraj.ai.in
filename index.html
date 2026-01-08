@@ -49,6 +49,8 @@
   <!-- Performance & Preload -->
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="assets/img/hero.webp" />
   
   <!-- Favicon -->
@@ -60,6 +62,7 @@
   <title>Swaraj Roy | Full-Stack Developer & Web Designer</title>
   
   <!-- Stylesheets -->
+  <link rel="preload" href="assets/css/styles.css" as="style" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
   
@@ -293,7 +296,7 @@
       <div class="container hero__grid">
         <div></div>
         <div class="hero__image">
-          <img class="hero__photo" src="assets/img/hero.webp" alt="Portrait">
+          <img class="hero__photo" src="assets/img/hero.webp" alt="Portrait" loading="lazy" decoding="async">
         </div>
       </div>
       <div class="container stats">
@@ -388,7 +391,7 @@
   <footer class="footer"></footer>
 
   <!-- SCROLL REVEAL -->
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/scrollreveal" defer></script>
   <script type="module" src="assets/js/main.js"></script>
   <script>
 function toggleSection(section) {

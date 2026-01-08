@@ -140,7 +140,7 @@ export function renderProjects() {
 
   projectsGrid.innerHTML = projectsData.map(project => `
     <article class="project-card">
-      <img src="${project.image}" alt="${project.title} screenshot">
+      <img src="${project.image}" alt="${project.title} screenshot" loading="lazy" decoding="async">
       <div class="project-card__body">
         <h3 class="project-card__title">${project.title}</h3>
         <p class="section__text">${project.description}</p>
@@ -168,7 +168,7 @@ export function renderGallery() {
 
   galleryGrid.innerHTML = galleryData.map(item => `
     <div class="gallery__item">
-      <img src="${item.src}" alt="${item.alt}">
+      <img src="${item.src}" alt="${item.alt}" loading="lazy" decoding="async">
     </div>
   `).join('');
 }

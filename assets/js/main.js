@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAll();
   setupThemeToggle();
   setupNavigationHandlers();
+  setupScrollToHideHeader();
   setupMaintenancePopup();
   // Animations must be setup AFTER content is rendered
   setTimeout(() => {
@@ -65,6 +66,40 @@ function setupNavigationHandlers() {
   };
   
   window.addEventListener('scroll', scrollActive);
+}
+
+/*===== HIDE HEADER ON SCROLL DOWN =====*/
+function setupScrollToHideHeader() {
+  const header = document.querySelector('.header');
+  let lastScrollY = 0;
+  let isHeaderVisible = true;
+  let scrollTimeout;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    // Clear existing timeout
+    clearTimeout(scrollTimeout);
+    
+    // If scrolled more than 100px from top, apply hide/show logic
+    if (currentScrollY > 100) {
+      if (currentScrollY > lastScrollY && isHeaderVisible) {
+        // Scrolling down - hide header
+        header.style.transform = 'translateY(-100%)';
+        isHeaderVisible = false;
+      } else if (currentScrollY < lastScrollY && !isHeaderVisible) {
+        // Scrolling up - show header
+        header.style.transform = 'translateY(0)';
+        isHeaderVisible = true;
+      }
+    } else {
+      // Near top - always show header
+      header.style.transform = 'translateY(0)';
+      isHeaderVisible = true;
+    }
+    
+    lastScrollY = currentScrollY;
+  }, { passive: true });
 }
 
 /*===== SCROLL REVEAL ANIMATION =====*/

@@ -138,7 +138,9 @@ export function renderProjects() {
   const projectsGrid = document.querySelector('.projects__grid');
   if (!projectsGrid) return;
 
-  projectsGrid.innerHTML = projectsData.map(project => `
+  const orderedProjects = [...projectsData].sort((a, b) => b.id - a.id);
+
+  projectsGrid.innerHTML = orderedProjects.map(project => `
     <article class="project-card">
       <img src="${project.image}" alt="${project.title} screenshot" loading="lazy" decoding="async">
       <div class="project-card__body">

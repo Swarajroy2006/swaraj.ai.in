@@ -7,7 +7,7 @@
 
 export const projectsData = [
    {
-    id: 1,
+    id: 5,
     title: 'Soul Sync',
     description: 'Soul Sync is an AI-powered emotional wellness platform.',
     image: 'assets/img/SoulSync.jpg',
@@ -18,7 +18,7 @@ export const projectsData = [
   },
   
   {
-    id: 2,
+    id: 4,
     title: 'To-do Lab',
     description: 'A simple productivity tool built to stay lightweight and mobile-friendly.',
     image: 'assets/img/work2.png',
@@ -38,7 +38,7 @@ export const projectsData = [
     featured: true
   },
   {
-    id: 4,
+    id: 2,
     title: 'assignment submission',
     description: 'A clean, responsive site for college information with smooth navigation and clear CTAs.',
     image: 'assets/img/work1.jpg',
@@ -48,7 +48,7 @@ export const projectsData = [
     featured: false
   },
   {
-    id: 5,
+    id: 1,
     title: 'Next Up',
     description: 'New experiments in UI/UX and campaigns are on the way.',
     image: 'assets/img/soon.jpg',
@@ -57,5 +57,16 @@ export const projectsData = [
     githubUrl: null,
     featured: false,
     comingSoon: true
-  }
+  },
+    {
+    id: 6,
+    title: 'GestureControl',
+    description: 'Real-time gesture recognition for volume & brightness.',
+    image: 'assets/img/project/GestureControl.webp',
+    tags: ['Python', 'OpenCV', 'Mediapipe'],
+    liveUrl: 'https://github.com/Swarajroy2006/GestureControl',
+    githubUrl: 'https://github.com/Swarajroy2006/GestureControl',
+    featured: true,
+    comingSoon: false
+  },
 ];

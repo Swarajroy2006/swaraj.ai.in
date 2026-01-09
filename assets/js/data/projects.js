@@ -7,7 +7,7 @@
 
 export const projectsData = [
    {
-    id: 5,
+    id: 7,
     title: 'Soul Sync',
     description: 'Soul Sync is an AI-powered emotional wellness platform.',
     image: 'assets/img/SoulSync.jpg',
@@ -70,13 +70,24 @@ export const projectsData = [
     comingSoon: false
   },
       {
-    id: 7,
+    id: 5,
     title: 'aadhaar last digit predictor',
     description: 'predicts the last (checksum) digit of an Aadhaar number using the Verhoeff algorithm.',
     image: 'assets/img/project/aadhaar.webp',
     tags: ['C pogramming', 'Verhoeff',],
     liveUrl: 'https://www.programiz.com/online-compiler/50mTAyic5UTYr',
     githubUrl: 'https://github.com/Swarajroy2006/aadhaar-last-digit-predictor',
+    featured: true,
+    comingSoon: false
+  },
+      {
+    id: 8,
+    title: 'GPAx',
+    description: 'predicts the last (checksum) digit of an Aadhaar number using the Verhoeff algorithm.',
+    image: 'assets/img/project/gpax.webp',
+    tags: ['C pogramming', 'Verhoeff',],
+    liveUrl: 'https://gpa-x.vercel.app/',
+    githubUrl: 'https://github.com/Swarajroy2006/GPAx',
     featured: true,
     comingSoon: false
   },

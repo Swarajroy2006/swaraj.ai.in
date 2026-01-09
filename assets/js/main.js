@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupNavigationHandlers();
   setupScrollToHideHeader();
   setupMaintenancePopup();
+  updateMetaYear();
 
   // Progressive render: defer non-critical sections until near viewport
   setupProgressiveRender();
@@ -93,6 +94,18 @@ function setupProgressiveRender() {
     requestIdleCallback(idleRender, { timeout: 3000 });
   } else {
     setTimeout(idleRender, 2500);
+  }
+}
+
+function updateMetaYear() {
+  const year = new Date().getFullYear();
+  const meta = document.querySelector('meta[name="copyright"]');
+  if (meta) {
+    meta.setAttribute('content', `Swaraj Roy ${year}`);
+  }
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = String(year);
   }
 }
 

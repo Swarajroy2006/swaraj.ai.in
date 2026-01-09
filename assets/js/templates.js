@@ -182,6 +182,7 @@ export function renderFooter() {
   const footer = document.querySelector('.footer');
   if (!footer) return;
 
+  const year = new Date().getFullYear();
   footer.innerHTML = `
     <p>${profile.credits}</p>
     <div class="footer__social">
@@ -190,7 +191,7 @@ export function renderFooter() {
       <a href="${profile.social.linkedin}" class="footer__icon"><i class='bx bxl-linkedin'></i></a>
       <a href="${profile.social.github}" class="footer__icon"><i class='bx bxl-github'></i></a>
     </div>
-    <p style="margin:0; font-size: 0.9rem;">${profile.copyright}</p>
+    <p style="margin:0; font-size: 0.9rem;">© <span id="year">${year}</span> ${profile.name}. All rights reserved.</p>
   `;
 }
 

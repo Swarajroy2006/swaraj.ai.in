@@ -83,7 +83,7 @@ export const projectsData = [
       {
     id: 8,
     title: 'GPAx',
-    description: 'predicts the last (checksum) digit of an Aadhaar number using the Verhoeff algorithm.',
+    description: 'MAKAUT SGPA/YGPA to Percentage Calculator',
     image: 'assets/img/project/gpax.webp',
     tags: ['Three.js', 'Json',],
     liveUrl: 'https://gpa-x.vercel.app/',

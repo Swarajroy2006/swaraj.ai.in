@@ -3,20 +3,98 @@
  * Handles navigation, animations, theme, and rendering
  */
 
-import { renderAll } from './templates.js';
+import { 
+  renderNav,
+  renderHero,
+  renderStats,
+  renderAbout,
+  renderExperience,
+  renderSkills,
+  renderProjects,
+  renderGallery,
+  renderFooter,
+} from './templates.js';
 
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', () => {
-  renderAll();
+  // Render critical, above-the-fold content first
+  renderNav();
+  renderHero();
+  renderStats();
+  renderFooter();
+
   setupThemeToggle();
   setupNavigationHandlers();
   setupScrollToHideHeader();
   setupMaintenancePopup();
-  // Animations must be setup AFTER content is rendered
+
+  // Progressive render: defer non-critical sections until near viewport
+  setupProgressiveRender();
+
+  // Setup animations only if device can handle it
   setTimeout(() => {
-    setupScrollAnimations();
+    if (shouldEnableAnimations()) {
+      setupScrollAnimations();
+    }
   }, 50);
 });
+
+function shouldEnableAnimations() {
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const lowConcurrency = typeof navigator.hardwareConcurrency === 'number' && navigator.hardwareConcurrency <= 4;
+  const slowConnection = navigator.connection && /(2g|slow-2g)/.test(navigator.connection.effectiveType || '');
+  return !prefersReduced && !lowConcurrency && !slowConnection;
+}
+
+function setupProgressiveRender() {
+  const sections = [
+    { id: 'about', render: renderAbout },
+    { id: 'experience', render: renderExperience },
+    { id: 'skills', render: renderSkills },
+    { id: 'projects', render: renderProjects },
+    { id: 'gallery', render: renderGallery },
+    { id: 'contact', render: () => {} }, // contact has static HTML
+  ];
+
+  const renderedSections = new Set();
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const sectionId = entry.target.id;
+        const item = sections.find(s => s.id === sectionId);
+        if (item && typeof item.render === 'function' && !renderedSections.has(sectionId)) {
+          // Render once when section approaches viewport
+          item.render();
+          renderedSections.add(sectionId);
+          obs.unobserve(entry.target);
+        }
+      }
+    });
+  }, { rootMargin: '300px 0px', threshold: 0.01 });
+
+  sections.forEach(s => {
+    const el = document.getElementById(s.id);
+    if (el) observer.observe(el);
+  });
+
+  // Fallback: if user doesn't scroll, render remaining at idle time
+  const idleRender = () => {
+    sections.forEach(s => {
+      const el = document.getElementById(s.id);
+      if (el && !renderedSections.has(s.id) && typeof s.render === 'function') {
+        s.render();
+        renderedSections.add(s.id);
+      }
+    });
+  };
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(idleRender, { timeout: 3000 });
+  } else {
+    setTimeout(idleRender, 2500);
+  }
+}
 
 /*===== MENU SHOW =====*/ 
 function setupNavigationHandlers() {

@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setupScrollToHideHeader();
   setupMaintenancePopup();
   updateMetaYear();
+  setupBackToTop();
+  setupThemeSync();
 
   // Progressive render: defer non-critical sections until near viewport
   setupProgressiveRender();
@@ -107,6 +109,109 @@ function updateMetaYear() {
   if (yearEl) {
     yearEl.textContent = String(year);
   }
+}
+
+/*===== TOAST NOTIFICATION SYSTEM =====*/
+function showToast(message, type = 'success', duration = 4000) {
+  const container = document.getElementById('toastContainer');
+  if (!container) return;
+
+  const toast = document.createElement('div');
+  toast.className = `toast toast--${type}`;
+  
+  const icon = type === 'success' ? 'bx-check-circle' : 'bx-error-circle';
+  
+  toast.innerHTML = `
+    <i class='bx ${icon} toast__icon'></i>
+    <span class="toast__message">${message}</span>
+    <button class="toast__close" aria-label="Close notification">
+      <i class='bx bx-x'></i>
+    </button>
+  `;
+  
+  container.appendChild(toast);
+  
+  // Trigger animation
+  setTimeout(() => toast.classList.add('show'), 10);
+  
+  // Close button handler
+  const closeBtn = toast.querySelector('.toast__close');
+  closeBtn.addEventListener('click', () => removeToast(toast));
+  
+  // Auto remove
+  setTimeout(() => removeToast(toast), duration);
+}
+
+function removeToast(toast) {
+  toast.classList.remove('show');
+  setTimeout(() => toast.remove(), 300);
+}
+
+/*===== SUCCESS ANIMATION =====*/
+function showSuccessAnimation() {
+  const existing = document.querySelector('.success-animation');
+  if (existing) existing.remove();
+
+  const animation = document.createElement('div');
+  animation.className = 'success-animation';
+  animation.innerHTML = `
+    <div class="success-checkmark">
+      <i class='bx bx-check'></i>
+    </div>
+    <h3>Message Sent!</h3>
+    <p>Thank you for reaching out. I'll get back to you soon.</p>
+  `;
+  
+  document.body.appendChild(animation);
+  setTimeout(() => animation.classList.add('show'), 10);
+  
+  setTimeout(() => {
+    animation.classList.remove('show');
+    setTimeout(() => animation.remove(), 300);
+  }, 3000);
+}
+
+/*===== BACK TO TOP BUTTON =====*/
+function setupBackToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/*===== THEME SYNC ACROSS TABS =====*/
+function setupThemeSync() {
+  const storageKey = 'swaraj-theme';
+  
+  window.addEventListener('storage', (e) => {
+    if (e.key === storageKey && e.newValue) {
+      const body = document.body;
+      const toggle = document.getElementById('theme-toggle');
+      const isLight = e.newValue === 'light';
+      
+      body.classList.toggle('theme-light', isLight);
+      if (toggle) {
+        const icon = toggle.querySelector('i');
+        if (icon) {
+          icon.className = isLight ? 'bx bx-sun' : 'bx bx-moon';
+        }
+        toggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
+      }
+    }
+  });
 }
 
 /*===== MENU SHOW =====*/ 

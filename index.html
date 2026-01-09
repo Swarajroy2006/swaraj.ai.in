@@ -369,15 +369,26 @@
         <div class="contact__grid">
           <div class="contact__card">
             <h3>Have an idea or opportunity?</h3>
-            <p class="section__text">Whether it’s a web project, AI idea, open-source contribution, or internship opportunity, feel free to reach out. I’m always open to discussing ideas, learning opportunities, and collaborations.</p>
+            <p class="section__text">Whether it's a web project, AI idea, open-source contribution, or internship opportunity, feel free to reach out. I'm always open to discussing ideas, learning opportunities, and collaborations.</p>
+            <p class="section__text">📧 <a href="mailto:mail@swaraj.ai.in">mail@swaraj.ai.in</a></p>
           </div>
           <div class="contact__card">
-            <form action="https://formsubmit.co/mail@swaraj.ai.in" method="POST" class="contact__form">
+            <form id="form" class="contact__form">
               <input class="input" type="text" name="name" placeholder="Full name" required>
               <input class="input" type="email" name="email" placeholder="Email address" required>
+              <div class="form-row">
+                <input class="input" type="tel" name="whatsapp" placeholder="WhatsApp number" pattern="^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$" title="Enter valid Indian mobile number" required>
+                <select class="input" name="reason" required>
+                  <option value="" disabled selected>Reason for contact</option>
+                  <option value="casual">Casual Inquiry</option>
+                  <option value="project">Project Work</option>
+                  <option value="internship">Internship Opportunity</option>
+                  <option value="collaboration">Collaboration</option>
+                  <option value="consultation">Consultation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
               <textarea class="input" name="message" rows="6" placeholder="Project idea, internship, or collaboration details" required></textarea>
-              <input type="hidden" name="_template" value="box">
-              <input type="hidden" name="_next" value="https://swaraj.ai.in/">
               <input type="text" name="_honey" style="display:none">
               <button class="btn btn--primary" type="submit">Send Message</button>
             </form>
@@ -390,18 +401,69 @@
   <!-- FOOTER -->
   <footer class="footer"></footer>
 
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class='bx bx-up-arrow-alt'></i>
+  </button>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
   <!-- SCROLL REVEAL -->
   <script src="https://unpkg.com/scrollreveal" defer></script>
   <script type="module" src="assets/js/main.js"></script>
-  <script>
-function toggleSection(section) {
-  const sectionDiv = document.getElementById(section);
-  if (sectionDiv.style.display === "none") {
-    sectionDiv.style.display = "block";
-  } else {
-    sectionDiv.style.display = "none";
-  }
-}
-</script>
+  <script type="module">
+    import { CONFIG } from './assets/js/config.js';
+
+    function toggleSection(section) {
+      const sectionDiv = document.getElementById(section);
+      if (sectionDiv.style.display === "none") {
+        sectionDiv.style.display = "block";
+      } else {
+        sectionDiv.style.display = "none";
+      }
+    }
+
+    // Web3Forms contact form handler
+    const form = document.getElementById('form');
+    if (form) {
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        formData.append("access_key", CONFIG.web3forms.accessKey);
+
+        const originalText = submitBtn.textContent;
+
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+
+        try {
+          const response = await fetch(CONFIG.web3forms.endpoint, {
+            method: "POST",
+            body: formData
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            showSuccessAnimation();
+            showToast("Your message has been sent successfully!", "success");
+            form.reset();
+          } else {
+            showToast("Error: " + data.message, "error");
+          }
+
+        } catch (error) {
+          showToast("Something went wrong. Please try again.", "error");
+        } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
+      });
+    }
+  </script>
 </body>
 </html>

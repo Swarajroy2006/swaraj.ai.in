@@ -170,9 +170,31 @@ export function renderGallery() {
 
   galleryGrid.innerHTML = galleryData.map(item => `
     <div class="gallery__item">
-      <img src="${item.src}" alt="${item.alt}" loading="lazy" decoding="async" fetchpriority="low">
+      <img data-src="${item.src}" alt="${item.alt}" loading="lazy" decoding="async" fetchpriority="low" class="lazy-image">
     </div>
   `).join('');
+
+  // Enhanced lazy loading with intersection observer
+  const images = galleryGrid.querySelectorAll('.lazy-image');
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        const src = img.getAttribute('data-src');
+        if (src) {
+          img.src = src;
+          img.removeAttribute('data-src');
+          img.classList.add('loaded');
+          observer.unobserve(img);
+        }
+      }
+    });
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.01
+  });
+
+  images.forEach(img => imageObserver.observe(img));
 }
 
 /**

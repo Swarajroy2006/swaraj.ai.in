@@ -968,6 +968,26 @@ body.theme-light select.input option:checked {
   }
 }
 
+/*===== HCAPTCHA STYLING =====*/
+.hcaptcha {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  display: flex;
+  justify-content: center;
+}
+
+.hcaptcha iframe {
+  border-radius: 8px !important;
+}
+
+body.theme-light .hcaptcha {
+  background: rgba(12, 21, 48, 0.04);
+  border-color: rgba(12, 21, 48, 0.15);
+}
+
 /*===== SUCCESS ANIMATION =====*/
 .success-animation {
   position: fixed;

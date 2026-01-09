@@ -11,6 +11,13 @@ export const CONFIG = {
     accessKey: 'e7e8740e-dad5-4572-b616-07eac2eaac03'
   },
   
+  // hCaptcha Configuration
+  // Get your site key from: https://dashboard.hcaptcha.com
+  hcaptcha: {
+    siteKey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
+    enabled: true
+  },
+  
   // Site URLs
   site: {
     url: 'https://swaraj.ai.in',
@@ -21,7 +28,8 @@ export const CONFIG = {
   features: {
     maintenanceMode: false,
     enableAnalytics: true,
-    enableFormValidation: true
+    enableFormValidation: true,
+    enableSpamProtection: true
   }
 };
 

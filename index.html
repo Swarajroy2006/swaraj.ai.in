@@ -53,6 +53,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="assets/img/hero.webp" />
   
+  <!-- Web3Forms hCaptcha Integration -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  
   <!-- Favicon -->
   <link rel="icon" href="assets/img/fevicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/img/fevicon.png">
@@ -390,6 +393,8 @@
               </div>
               <textarea class="input" name="message" rows="6" placeholder="Project idea, internship, or collaboration details" required></textarea>
               <input type="text" name="_honey" style="display:none">
+              <!-- hCaptcha Widget - Web3Forms Integration -->
+              <div class="h-captcha" data-captcha="true" data-theme="dark"></div>
               <button class="btn btn--primary" type="submit">Send Message</button>
             </form>
           </div>
@@ -424,7 +429,8 @@
       }
     }
 
-    // Web3Forms contact form handler
+    // Web3Forms contact form handler with hCaptcha
+    // Note: Web3Forms client script automatically handles hCaptcha token extraction
     const form = document.getElementById('form');
     if (form) {
       const submitBtn = form.querySelector('button[type="submit"]');
@@ -436,7 +442,6 @@
         formData.append("access_key", CONFIG.web3forms.accessKey);
 
         const originalText = submitBtn.textContent;
-
         submitBtn.textContent = "Sending...";
         submitBtn.disabled = true;
 

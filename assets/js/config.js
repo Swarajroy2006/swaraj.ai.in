@@ -8,7 +8,7 @@ export const CONFIG = {
   // Web3Forms API
   web3forms: {
     endpoint: 'https://api.web3forms.com/submit',
-    accessKey: '45fd8d01-2667-4c53-9352-618f98eced0f'
+    accessKey: 'e7e8740e-dad5-4572-b616-07eac2eaac03'
   },
   
   // Site URLs

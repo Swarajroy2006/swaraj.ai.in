@@ -85,7 +85,7 @@ export const projectsData = [
     title: 'GPAx',
     description: 'predicts the last (checksum) digit of an Aadhaar number using the Verhoeff algorithm.',
     image: 'assets/img/project/gpax.webp',
-    tags: ['C pogramming', 'Verhoeff',],
+    tags: ['Three.js', 'Json',],
     liveUrl: 'https://gpa-x.vercel.app/',
     githubUrl: 'https://github.com/Swarajroy2006/GPAx',
     featured: true,
